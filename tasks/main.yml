@@ -1,0 +1,12 @@
+---
+# tasks file for ansible-role-kvm/
+- name: Install QEMU/KVM
+  apt:
+    name:   "{{ item }}"
+    state:  latest
+  with_items:
+    - qemu-kvm
+    - libvirt-bin
+    - virtinst
+    - bridge-utils
+    - cpu-checker
